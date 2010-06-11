@@ -169,7 +169,12 @@ module Mail
   def Mail.read(filename)
     Mail.new(File.read(filename))
   end
-  
+
+  # Instantiates a new Mail::Message using a string
+  def Mail.read_from_string(mail_as_string)
+    Mail.new(mail_as_string)
+  end
+
   # Initialize the observers and interceptors arrays
   @@delivery_notification_observers = []
   @@delivery_interceptors = []
